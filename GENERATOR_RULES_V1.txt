@@ -1,0 +1,33 @@
+Spiegelshop Money Page Engine – Generator Rules V1
+
+1) NICHT ändern:
+- Keine Veränderung an [section], [row], [col], IDs, Shortcodes, Button-Shortcodes, #konfigurator, #whatsapp.
+- Rechte Spalte bleibt IMMER: [wpcode id="{{WPCODE_GALLERY_ID}}"].
+
+2) Nur befüllen:
+- Nur {{PLACEHOLDER}} befüllen. Keine neuen HTML-Strukturen hinzufügen.
+
+3) Tonalität:
+- Premium, klar, menschlich. Keine AI-Floskeln. Keine übertriebenen Versprechen.
+
+4) GEO:
+- 1 Satz Wien & Umgebung + 3–5 Bezirke in einem Satz (optional). Keine Bezirksliste mit 23 Bezirken.
+
+5) Contentumfang:
+- Praxis-Block: 5–7 Unterpunkte (H3 + Absatz), konkret.
+- FAQ: 8–12 Fragen, 2–4 Sätze je Antwort.
+- Mindestens 5 FAQ-Antworten enthalten “mehr zum Thema”-Link zu /infohub/... (lesbare URL).
+
+6) Interne Links:
+- Nur relative URLs: /infohub/... oder /konfigurator/...
+- Keine externen Links (außer WhatsApp/tel, wenn vorhanden).
+
+7) Schema:
+- SCHEMA_JSON enthält FAQPage + Product/Service.
+- Kein Preis, wenn nicht vorhanden.
+- areaServed: Vienna
+- url: aktuelle Seite
+
+8) Validierung:
+- Keine Platzhalterwörter wie “lokal”, “placeholder”, “TBD”.
+- Keine leeren Accordion-Items.

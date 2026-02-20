@@ -1,0 +1,492 @@
+/* =========================================================
+   SPIEGELSHOP – WANDSPIEGEL GROSS – GLOBAL LP CSS (Money + InfoHub)
+   Wrapper:
+   - Money Pages: .lp-spiegel
+   - InfoHub Addons: .lp-infohub-upgrade (oft kombiniert mit .lp-spiegel)
+   ========================================================= */
+
+/* ---------- Shared: Trust Card (Money + InfoHub) ---------- */
+.lp-spiegel .trust-card,
+.lp-infohub-upgrade .trust-card {
+  background: #fff;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #0f5fa8;
+  border-radius: 10px;
+  padding: 12px 12px 12px 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+.lp-spiegel .trust-card:hover,
+.lp-infohub-upgrade .trust-card:hover {
+  box-shadow: 0 8px 18px rgba(0,0,0,.1);
+  transform: translateY(-1px);
+}
+
+/* Trust title (Money) */
+.lp-spiegel .trust-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.lp-spiegel .trust-title i {
+  color: #0f5fa8;
+  font-size: 15px;
+}
+
+/* ---------- Shared: Google Rating Meta ---------- */
+.google-rating-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 15px;
+  color: #777;
+  line-height: 1.35;
+  margin: 10px 0 11px;
+}
+.google-rating-meta .stars {
+  display: inline-flex;
+  gap: 1px;
+  color: #f4b400;
+  line-height: 1;
+}
+.google-rating-meta .stars i { font-size: 14px; }
+.google-rating-meta .rating-score {
+  color: #4a4a4a;
+  font-weight: 600;
+}
+.google-rating-meta a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---------- Money: Hero micro CTAs + intent line ---------- */
+.lp-spiegel .intent-line {
+  font-size: 13px;
+  color: #6f6f6f;
+  margin: 0 0 10px;
+}
+.lp-spiegel .hero-micro-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 2px;
+}
+.lp-spiegel .hero-micro-ctas a {
+  display: inline-block;
+  border: 1px solid #0f5fa8;
+  color: #0f5fa8;
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: 13px;
+  line-height: 1.2;
+  text-decoration: none;
+  font-weight: 600;
+  background: #fff;
+}
+
+/* ---------- Money: Mini FAQ (details/summary) ---------- */
+.lp-spiegel .mini-faq-wrap { margin-top: 14px; }
+.lp-spiegel .mini-faq-wrap h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.lp-spiegel .mini-faq-wrap details {
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.04);
+}
+.lp-spiegel .mini-faq-wrap summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #3b3b3b;
+  font-size: 14px;
+}
+.lp-spiegel .mini-faq-wrap p {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: #636363;
+  line-height: 1.45;
+}
+
+/* ---------- Money: Cards (selfcheck/case/price) ---------- */
+.lp-spiegel .lp-selfcheck-card,
+.lp-spiegel .lp-case-card,
+.lp-spiegel .lp-price-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.04);
+  height: 100%;
+  padding: 18px;
+}
+.lp-spiegel .lp-price-card .price-range {
+  color: #0f5fa8;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.lp-spiegel .lp-price-note {
+  font-size: 13px;
+  color: #6f6f6f;
+  margin-top: 8px;
+}
+
+/* ---------- Money: Steps ---------- */
+.lp-spiegel .step-col { position: relative; }
+.lp-spiegel .step-card {
+  text-align: center;
+  padding: 16px 12px;
+  background: #fbfbfb;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.04);
+  height: 100%;
+}
+.lp-spiegel .step-dot {
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  background: #0f5fa8;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(15,95,168,.25);
+}
+.lp-spiegel .step-arrow {
+  position: absolute;
+  right: -12px;
+  top: 42%;
+  transform: translateY(-50%);
+  color: #0f5fa8;
+  opacity: .55;
+  font-size: 18px;
+  z-index: 3;
+}
+
+/* ---------- Breadcrumb (Money + Infohub hero uses .lp-spiegel) ---------- */
+.lp-spiegel .lp-breadcrumb {
+  font-size: 13px;
+  color: #8a8a8a;
+  margin: 4px 0 8px;
+  line-height: 1.4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 100%;
+}
+.lp-spiegel .lp-breadcrumb a { color: #8a8a8a; text-decoration: none; }
+.lp-spiegel .lp-breadcrumb a:hover { text-decoration: underline; }
+.lp-spiegel .lp-breadcrumb .sep { opacity: .6; }
+.lp-spiegel .lp-breadcrumb .current { color: #444; font-weight: 600; }
+
+/* ---------- Floating Contact (shared) ---------- */
+.lp-floating-contact {
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 290px;
+  z-index: 999;
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  padding: 18px;
+}
+.lp-floating-contact p { margin-bottom: 10px; }
+
+/* Mobile contact wrapper from your templates */
+.lp-contact-mobile { display: none; }
+
+/* ---------- InfoHub: Article hero + authority card ---------- */
+.lp-spiegel .lp-article-hero { margin: 0 0 18px; } /* was 26px -> weniger Luft */
+.lp-spiegel .lp-article-hero .hero-meta {
+  font-size: 12px;
+  color: #868686;
+  margin: 0 0 10px; /* was 14px */
+}
+.lp-spiegel .lp-authority-card {
+  background: #fbfbfb;
+  border: 1px solid #eee;
+  border-left: 4px solid #0f5fa8;
+  border-radius: 10px;
+  box-shadow: none;
+  padding: 12px 12px 12px 14px;
+}
+.lp-spiegel .lp-authority-card ul { margin: 0 0 8px; padding-left: 18px; }
+.lp-spiegel .lp-authority-card li { margin: 0 0 4px; }
+
+/* ---------- InfoHub: TOC / Takeaways / Inline CTA spacing ---------- */
+.lp-infohub-upgrade .lp-toc-card { margin: 0 0 16px 0; }        /* was 26px */
+.lp-infohub-upgrade .lp-key-takeaways { margin: 0 0 16px 0; }    /* was 26px */
+.lp-infohub-upgrade .lp-inline-cta { margin: 16px 0; }           /* was 28px */
+
+/* ---------- InfoHub: UX Note + Mini Grid (merged from your inserts) ---------- */
+.lp-spiegel .ux-info-note {
+  background: #fcfcfc;
+  border: 1px solid #ececec;
+  border-left: 4px solid #0f5fa8;
+  border-radius: 7px;
+  padding: 7px 10px;
+  color: #5f5f5f;
+  font-size: 13px;
+  line-height: 1.45;
+  box-shadow: none;
+  margin: 10px 0 12px; /* was 12px 0 18px -> kompakter */
+}
+.lp-spiegel .ux-info-note i {
+  color: #0f5fa8;
+  margin-right: 7px;
+  font-size: 12px;
+}
+.lp-spiegel .ux-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.lp-spiegel .ux-mini-grid .trust-card {
+  border: 1px solid #eee;
+  box-shadow: none;
+  padding: 14px 13px;
+}
+.lp-spiegel .ux-mini-grid .trust-card strong { font-weight: 700; }
+
+/* ---------- InfoHub: Preconversion Card ---------- */
+.lp-spiegel .ux-preconversion-card {
+  padding: 20px 18px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.05);
+}
+.lp-spiegel .ux-preconversion-card a {
+  padding: 9px 14px !important;
+  font-size: 14px;
+}
+
+/* ---------- InfoHub: CODEX blocks (context, price visual, compare, next steps) ---------- */
+.lp-spiegel .codex-context-card,
+.lp-spiegel .codex-price-visual,
+.lp-spiegel .codex-kostentreiber-grid .trust-card,
+.lp-spiegel .codex-inline-box,
+.lp-spiegel .codex-next-step-card,
+.lp-spiegel .codex-compare-wrap {
+  background: #fff;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #0f5fa8;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+}
+.lp-spiegel .codex-context-card,
+.lp-spiegel .codex-price-visual,
+.lp-spiegel .codex-inline-box,
+.lp-spiegel .codex-next-step-card,
+.lp-spiegel .codex-compare-wrap { padding: 14px; }
+
+.lp-spiegel .codex-outline-btn {
+  display: inline-block;
+  border: 1px solid #0f5fa8;
+  color: #0f5fa8;
+  border-radius: 6px;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  background: #fff;
+}
+
+/* Price bar */
+.lp-spiegel .codex-price-bar {
+  height: 12px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #f2f2f2;
+  display: flex;
+  margin-bottom: 10px;
+}
+.lp-spiegel .codex-price-bar span { display: block; height: 100%; }
+.lp-spiegel .codex-price-kompakt { width: 30%; background: #d9b0b8; }
+.lp-spiegel .codex-price-standard { width: 40%; background: #b75d6d; }
+.lp-spiegel .codex-price-premium { width: 30%; background: #0f5fa8; }
+
+/* Kostentreiber grid + next steps */
+.lp-spiegel .codex-kostentreiber-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.lp-spiegel .codex-kostentreiber-grid .trust-card { padding: 12px; }
+.lp-spiegel .codex-kostentreiber-grid .icon-checkmark { color: #0f5fa8; margin-right: 6px; }
+
+.lp-spiegel .codex-next-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* Compare table */
+.lp-spiegel .codex-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.lp-spiegel .codex-compare-table th,
+.lp-spiegel .codex-compare-table td {
+  border: 1px solid #e5e5e5;
+  padding: 10px;
+  vertical-align: top;
+  text-align: left;
+}
+.lp-spiegel .codex-compare-table thead th {
+  background: #f8f8f8;
+  color: #2c3e50;
+}
+
+/* =========================================================
+   INFOHUB – SPACING NORMALIZER (nur .lp-infohub-upgrade)
+   ========================================================= */
+
+.lp-infohub-upgrade .trust-card h3,
+.lp-infohub-upgrade .trust-card strong {
+  margin-top: 0;
+}
+.lp-infohub-upgrade .trust-card p {
+  margin: 0 0 8px;
+}
+.lp-infohub-upgrade .trust-card p:last-child {
+  margin-bottom: 0;
+}
+.lp-infohub-upgrade .trust-card ul {
+  margin: 0 0 10px;
+  padding-left: 18px;
+}
+.lp-infohub-upgrade .trust-card ul:last-child {
+  margin-bottom: 0;
+}
+.lp-infohub-upgrade .trust-card li {
+  margin: 0 0 4px;
+}
+.lp-infohub-upgrade .trust-card + .trust-card {
+  margin-top: 12px;
+}
+.lp-infohub-upgrade .lp-inline-cta {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1199px) {
+  .lp-floating-contact { display: none; }
+}
+@media (max-width: 1024px) {
+  .lp-contact-mobile { display: block; }
+  .lp-spiegel .step-arrow { display: none; }
+  .google-rating-meta { font-size: 14px; gap: 5px; max-width: 100%; }
+
+  .lp-spiegel .ux-mini-grid { grid-template-columns: 1fr; }
+  .lp-spiegel .codex-kostentreiber-grid,
+  .lp-spiegel .codex-next-grid { grid-template-columns: 1fr; }
+  .lp-spiegel .codex-compare-wrap { overflow-x: auto; }
+}
+@media (max-width: 768px) {
+  .lp-spiegel .lp-breadcrumb { font-size: 12px; }
+}
+
+/* =========================================================
+   INFOHUB – FIX: große Zwischenräume zwischen Blöcken
+   ========================================================= */
+
+.entry-content:has(.lp-infohub-upgrade) > p:empty {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.entry-content:has(.lp-infohub-upgrade) > p > br:only-child {
+  display: none !important;
+}
+.entry-content:has(.lp-infohub-upgrade) > p:has(> br:only-child) {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.entry-content:has(.lp-infohub-upgrade) > p {
+  margin-block: 0 !important;
+}
+.entry-content:has(.lp-infohub-upgrade) > .section + .section {
+  margin-top: 0 !important;
+}
+
+/* ---------- Spiegelshop: Fixed right floating CTA via PHP snippet ---------- */
+.spiegelshop-floating-cta {
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+  max-width: calc(100vw - 24px);
+  z-index: 9999;
+  background: #0f5fa8;
+  color: #fff;
+  padding: 22px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 10px 24px rgba(0,0,0,.16);
+}
+.spiegelshop-floating-cta h3 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 32px;
+  line-height: 1.15;
+}
+.spiegelshop-floating-cta p {
+  margin: 0 0 12px;
+  font-size: 14px;
+}
+.spiegelshop-floating-cta ul {
+  margin: 0 0 12px;
+  padding-left: 0;
+  list-style: none;
+}
+.spiegelshop-floating-cta li {
+  margin: 0 0 2px;
+  font-size: 14px;
+}
+.spiegelshop-floating-cta__btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 900;
+  line-height: 1.2;
+  padding: 11px 12px;
+  margin-bottom: 10px;
+}
+.spiegelshop-floating-cta__btn--wa {
+  background: #7ddc45;
+  color: #fff;
+}
+.spiegelshop-floating-cta__btn--tel {
+  border: 1px solid rgba(255,255,255,.65);
+  color: #fff;
+  background: transparent;
+}
+.spiegelshop-floating-cta__btn--offer {
+  background: #134777;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.spiegelshop-floating-cta small {
+  display: block;
+  font-size: 12px;
+  opacity: .92;
+}
+@media (max-width: 1024px) {
+  .spiegelshop-floating-cta { display: none; }
+}
