@@ -208,11 +208,11 @@
 .lp-contact-mobile { display: none; }
 
 /* ---------- InfoHub: Article hero + authority card ---------- */
-.lp-spiegel .lp-article-hero { margin: 0 0 18px; } /* was 26px -> weniger Luft */
+.lp-spiegel .lp-article-hero { margin: 0 0 18px; }
 .lp-spiegel .lp-article-hero .hero-meta {
   font-size: 12px;
   color: #868686;
-  margin: 0 0 10px; /* was 14px */
+  margin: 0 0 10px;
 }
 .lp-spiegel .lp-authority-card {
   background: #fbfbfb;
@@ -226,11 +226,11 @@
 .lp-spiegel .lp-authority-card li { margin: 0 0 4px; }
 
 /* ---------- InfoHub: TOC / Takeaways / Inline CTA spacing ---------- */
-.lp-infohub-upgrade .lp-toc-card { margin: 0 0 16px 0; }        /* was 26px */
-.lp-infohub-upgrade .lp-key-takeaways { margin: 0 0 16px 0; }    /* was 26px */
-.lp-infohub-upgrade .lp-inline-cta { margin: 16px 0; }           /* was 28px */
+.lp-infohub-upgrade .lp-toc-card { margin: 0 0 16px 0; }
+.lp-infohub-upgrade .lp-key-takeaways { margin: 0 0 16px 0; }
+.lp-infohub-upgrade .lp-inline-cta { margin: 16px 0; }
 
-/* ---------- InfoHub: UX Note + Mini Grid (merged from your inserts) ---------- */
+/* ---------- InfoHub: UX Note + Mini Grid ---------- */
 .lp-spiegel .ux-info-note {
   background: #fcfcfc;
   border: 1px solid #ececec;
@@ -241,7 +241,7 @@
   font-size: 13px;
   line-height: 1.45;
   box-shadow: none;
-  margin: 10px 0 12px; /* was 12px 0 18px -> kompakter */
+  margin: 10px 0 12px;
 }
 .lp-spiegel .ux-info-note i {
   color: #0f5fa8;
@@ -270,7 +270,7 @@
   font-size: 14px;
 }
 
-/* ---------- InfoHub: CODEX blocks (context, price visual, compare, next steps) ---------- */
+/* ---------- InfoHub: CODEX blocks ---------- */
 .lp-spiegel .codex-context-card,
 .lp-spiegel .codex-price-visual,
 .lp-spiegel .codex-kostentreiber-grid .trust-card,
@@ -351,34 +351,15 @@
 /* =========================================================
    INFOHUB – SPACING NORMALIZER (nur .lp-infohub-upgrade)
    ========================================================= */
-
 .lp-infohub-upgrade .trust-card h3,
-.lp-infohub-upgrade .trust-card strong {
-  margin-top: 0;
-}
-.lp-infohub-upgrade .trust-card p {
-  margin: 0 0 8px;
-}
-.lp-infohub-upgrade .trust-card p:last-child {
-  margin-bottom: 0;
-}
-.lp-infohub-upgrade .trust-card ul {
-  margin: 0 0 10px;
-  padding-left: 18px;
-}
-.lp-infohub-upgrade .trust-card ul:last-child {
-  margin-bottom: 0;
-}
-.lp-infohub-upgrade .trust-card li {
-  margin: 0 0 4px;
-}
-.lp-infohub-upgrade .trust-card + .trust-card {
-  margin-top: 12px;
-}
-.lp-infohub-upgrade .lp-inline-cta {
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
+.lp-infohub-upgrade .trust-card strong { margin-top: 0; }
+.lp-infohub-upgrade .trust-card p { margin: 0 0 8px; }
+.lp-infohub-upgrade .trust-card p:last-child { margin-bottom: 0; }
+.lp-infohub-upgrade .trust-card ul { margin: 0 0 10px; padding-left: 18px; }
+.lp-infohub-upgrade .trust-card ul:last-child { margin-bottom: 0; }
+.lp-infohub-upgrade .trust-card li { margin: 0 0 4px; }
+.lp-infohub-upgrade .trust-card + .trust-card { margin-top: 12px; }
+.lp-infohub-upgrade .lp-inline-cta { padding-top: 12px; padding-bottom: 12px; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1199px) {
@@ -401,26 +382,19 @@
 /* =========================================================
    INFOHUB – FIX: große Zwischenräume zwischen Blöcken
    ========================================================= */
-
 .entry-content:has(.lp-infohub-upgrade) > p:empty {
   display: none !important;
   margin: 0 !important;
   padding: 0 !important;
 }
-.entry-content:has(.lp-infohub-upgrade) > p > br:only-child {
-  display: none !important;
-}
+.entry-content:has(.lp-infohub-upgrade) > p > br:only-child { display: none !important; }
 .entry-content:has(.lp-infohub-upgrade) > p:has(> br:only-child) {
   display: none !important;
   margin: 0 !important;
   padding: 0 !important;
 }
-.entry-content:has(.lp-infohub-upgrade) > p {
-  margin-block: 0 !important;
-}
-.entry-content:has(.lp-infohub-upgrade) > .section + .section {
-  margin-top: 0 !important;
-}
+.entry-content:has(.lp-infohub-upgrade) > p { margin-block: 0 !important; }
+.entry-content:has(.lp-infohub-upgrade) > .section + .section { margin-top: 0 !important; }
 
 /* ---------- Spiegelshop: Fixed right floating CTA via PHP snippet ---------- */
 .spiegelshop-floating-cta {
@@ -437,6 +411,8 @@
   border-radius: 14px;
   border: 1px solid rgba(0,0,0,.08);
   box-shadow: 0 10px 24px rgba(0,0,0,.16);
+  display: block;
+  pointer-events: auto;
 }
 .spiegelshop-floating-cta h3 {
   margin: 0 0 8px;
@@ -444,19 +420,13 @@
   font-size: 32px;
   line-height: 1.15;
 }
-.spiegelshop-floating-cta p {
-  margin: 0 0 12px;
-  font-size: 14px;
-}
+.spiegelshop-floating-cta p { margin: 0 0 12px; font-size: 14px; }
 .spiegelshop-floating-cta ul {
   margin: 0 0 12px;
   padding-left: 0;
   list-style: none;
 }
-.spiegelshop-floating-cta li {
-  margin: 0 0 2px;
-  font-size: 14px;
-}
+.spiegelshop-floating-cta li { margin: 0 0 2px; font-size: 14px; }
 .spiegelshop-floating-cta__btn {
   display: block;
   width: 100%;
@@ -468,25 +438,15 @@
   padding: 11px 12px;
   margin-bottom: 10px;
 }
-.spiegelshop-floating-cta__btn--wa {
-  background: #7ddc45;
-  color: #fff;
-}
+.spiegelshop-floating-cta__btn--wa { background: #7ddc45; color: #fff; }
 .spiegelshop-floating-cta__btn--tel {
   border: 1px solid rgba(255,255,255,.65);
   color: #fff;
   background: transparent;
 }
-.spiegelshop-floating-cta__btn--offer {
-  background: #134777;
-  color: #fff;
-  margin-bottom: 8px;
-}
-.spiegelshop-floating-cta small {
-  display: block;
-  font-size: 12px;
-  opacity: .92;
-}
+.spiegelshop-floating-cta__btn--offer { background: #134777; color: #fff; margin-bottom: 8px; }
+.spiegelshop-floating-cta small { display: block; font-size: 12px; opacity: .92; }
+
 @media (max-width: 1024px) {
   .spiegelshop-floating-cta { display: none; }
 }
