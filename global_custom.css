@@ -1,0 +1,662 @@
+/* =========================================================
+   TISCHLEREI.WIEN – GLOBAL LP CSS (Money + Snippet-System)
+   Wrapper: .lp-kueche | InfoHub: .lp-infohub | Money: .lp-money
+   (Optimiert: redundante/doppelte Blöcke entfernt, gleiche Funktion)
+   ========================================================= */
+
+/* ---------- Brand Tokens ---------- */
+:root{
+  --tw-brand: #a97745;
+  --tw-brand-dk: #6b3f22;
+  --tw-accent: #25D366;
+  --tw-star: #f4b400;
+  --tw-border: #dddddd;
+  --tw-soft: #fbfbfb;
+  --tw-text: #2b2b2b;
+}
+
+/* =========================================================
+   LP Shell Layout (Hero left / Gallery right)
+   ========================================================= */
+.lp-kueche .lp-shell__hero-wrap{ display:flex; gap:20px; align-items:flex-start; }
+.lp-kueche .lp-shell__hero-left{ flex:0 0 58%; min-width:0; }
+.lp-kueche .lp-shell__hero-right{ flex:1; min-width:0; }
+
+.lp-kueche .lp-content-card{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:14px;
+  padding:18px;
+  margin-top:18px;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+
+/* Optional: Gallery rechts sticky */
+@media (min-width:1025px){
+  .lp-kueche .lp-shell__hero-right{ position:sticky; top:110px; }
+}
+
+/* Grids */
+.lp-grid{ display:grid; gap:12px; }
+.lp-grid--2{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+.lp-grid--5{ grid-template-columns:repeat(5, minmax(0,1fr)); }
+
+@media (max-width:1024px){
+  .lp-kueche .lp-shell__hero-wrap{ flex-direction:column; }
+  .lp-kueche .lp-shell__hero-left,
+  .lp-kueche .lp-shell__hero-right{ flex:1; width:100%; position:static; top:auto; }
+  .lp-grid--2, .lp-grid--5{ grid-template-columns:1fr; }
+}
+
+/* =========================================================
+   Money: Kopfbereich (Spacing + weichere Ecken) – Engine: .lp-money__head
+   ========================================================= */
+.lp-kueche.lp-money{ padding-top:6px; }
+.lp-kueche.lp-money .lp-money__head{
+  margin-top:18px;
+  border-radius:16px;
+  padding:18px;
+}
+@media (max-width:849px){
+  .lp-kueche.lp-money .lp-money__head{
+    margin-top:12px;
+    border-radius:14px;
+    padding:14px;
+  }
+}
+
+/* =========================================================
+   HERO – Trust Badges
+   ========================================================= */
+.lp-kueche .lp-hero__badges{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:12px;
+  margin-top:12px;
+}
+.lp-kueche .lp-hero__badge{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:12px;
+  padding:12px 12px 10px;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.lp-kueche .lp-hero__badge strong{
+  display:block;
+  color:var(--tw-brand-dk);
+  font-size:14px;
+  line-height:1.2;
+  margin-bottom:4px;
+}
+.lp-kueche .lp-hero__badge span{
+  display:block;
+  color:#555;
+  font-size:13px;
+  line-height:1.35;
+}
+@media (max-width:849px){
+  .lp-kueche .lp-hero__badges{ grid-template-columns:1fr; }
+}
+
+/* =========================================================
+   Shared: Trust Card
+   ========================================================= */
+.lp-kueche .trust-card{
+  background:#fff;
+  border:1px solid var(--tw-border);
+  border-left:4px solid var(--tw-brand);
+  border-radius:10px;
+  padding:12px 12px 12px 14px;
+  box-shadow:0 2px 10px rgba(0,0,0,.05);
+  transition:box-shadow .2s ease, transform .2s ease;
+}
+.lp-kueche .trust-card:hover{
+  box-shadow:0 8px 18px rgba(0,0,0,.10);
+  transform:translateY(-1px);
+}
+
+/* =========================================================
+   Google Rating Meta
+   ========================================================= */
+.google-rating-meta{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:6px;
+  font-size:15px;
+  color:#777;
+  line-height:1.35;
+  margin:10px 0 11px;
+}
+.google-rating-meta .stars{ color:var(--tw-star); }
+
+/* =========================================================
+   Money: Hero micro CTAs + intent line
+   ========================================================= */
+.lp-kueche .intent-line{ font-size:13px; color:#6f6f6f; margin:0 0 10px; }
+.lp-kueche .hero-micro-ctas{ display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 2px; }
+.lp-kueche .hero-micro-ctas a{
+  display:inline-block;
+  border:1px solid var(--tw-brand);
+  color:var(--tw-brand-dk);
+  border-radius:6px;
+  padding:7px 10px;
+  font-size:13px;
+  line-height:1.2;
+  text-decoration:none;
+  font-weight:700;
+  background:#fff;
+}
+
+/* =========================================================
+   Money: Mini FAQ (Details fallback)
+   ========================================================= */
+.lp-kueche .mini-faq-wrap{ margin-top:14px; }
+.lp-kueche .mini-faq-wrap details{
+  background:#fff;
+  border:1px solid #e3e3e3;
+  border-radius:8px;
+  padding:10px 12px;
+  margin-bottom:8px;
+  box-shadow:0 1px 6px rgba(0,0,0,.04);
+}
+.lp-kueche .mini-faq-wrap summary{ cursor:pointer; font-weight:700; color:#3b3b3b; font-size:14px; }
+.lp-kueche .mini-faq-wrap p{ margin:6px 0 0; font-size:14px; color:#636363; line-height:1.45; }
+
+/* =========================================================
+   Steps
+   ========================================================= */
+.lp-kueche .step-col{ position:relative; }
+.lp-kueche .step-card{
+  text-align:center;
+  padding:16px 12px;
+  background:var(--tw-soft);
+  border:1px solid #ececec;
+  border-radius:12px;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+  height:100%;
+}
+.lp-kueche .step-dot{
+  width:56px; height:56px; line-height:56px;
+  border-radius:50%;
+  margin:0 auto 10px;
+  background:var(--tw-brand);
+  color:#fff;
+  font-weight:800;
+  box-shadow:0 4px 10px rgba(169,119,69,.25);
+}
+.lp-kueche .step-arrow{
+  position:absolute;
+  right:-12px;
+  top:42%;
+  transform:translateY(-50%);
+  color:var(--tw-brand-dk);
+  opacity:.55;
+  font-size:18px;
+  z-index:3;
+}
+@media (max-width:1024px){ .lp-kueche .step-arrow{ display:none; } }
+
+/* =========================================================
+   SPIEGEL_GALLERY (Placeholder Grid)
+   ========================================================= */
+.spiegel-gallery{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:10px; }
+.spiegel-gallery__item{
+  display:block;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid #eee;
+  background:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+.spiegel-gallery__img{ width:100%; height:auto; display:block; }
+.spiegel-gallery--hero .spiegel-gallery__item.is-hero{ grid-column:1 / -1; }
+@media (max-width:849px){ .spiegel-gallery{ grid-template-columns:1fr; } }
+
+/* =========================================================
+   FLOATING CTA Styles (IDs)
+   ========================================================= */
+#tw-floating-cta.tw-floating-cta{
+  position:fixed;
+  right:18px;
+  top:50vh;
+  transform:translateY(-50%);
+  width:320px;
+  max-width:calc(100vw - 24px);
+  z-index:2147483000;
+  background:rgba(255,255,255,.96);
+  color:var(--tw-text);
+  padding:18px 18px 16px;
+  border-radius:14px;
+  border:1px solid rgba(0,0,0,.10);
+  box-shadow:0 10px 24px rgba(0,0,0,.16);
+}
+#tw-floating-cta .tw-badge{
+  display:inline-block;
+  margin:0 0 10px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(169,119,69,.12);
+  color:var(--tw-brand-dk);
+  font-size:12px;
+  font-weight:900;
+  line-height:1.2;
+}
+#tw-floating-cta .tw-title{ margin:0 0 8px; color:var(--tw-brand-dk); font-size:28px; line-height:1.12; }
+#tw-floating-cta .tw-rating{ display:flex; align-items:center; flex-wrap:wrap; gap:6px; margin:0 0 10px; font-size:12px; line-height:1.3; color:#555; }
+#tw-floating-cta .tw-stars{ color:var(--tw-star); letter-spacing:.6px; font-size:14px; line-height:1; }
+#tw-floating-cta .tw-lead{ margin:0 0 10px; font-size:14px; line-height:1.35; }
+#tw-floating-cta .tw-bullets{ margin:0 0 12px; padding-left:0; list-style:none; }
+#tw-floating-cta .tw-bullets li{ margin:0 0 3px; font-size:14px; line-height:1.25; }
+#tw-floating-cta .tw-btn{
+  display:block;
+  width:100%;
+  text-align:center;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:900;
+  line-height:1.2;
+  padding:11px 12px;
+  margin-bottom:10px;
+}
+#tw-floating-cta .tw-btn--wa{ background:var(--tw-accent); color:#fff; }
+#tw-floating-cta .tw-btn--tel{ border:1px solid rgba(0,0,0,.20); color:var(--tw-brand-dk); background:transparent; }
+#tw-floating-cta .tw-btn--offer{ background:var(--tw-brand); color:#fff; margin-bottom:8px; }
+#tw-floating-cta .tw-note{ display:block; font-size:12px; opacity:.92; color:#555; }
+
+#tw-mobile-cta.tw-mobile-cta{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:2147483001;
+  background:rgba(107,63,34,.96);
+  backdrop-filter:blur(4px);
+  padding:10px 10px calc(10px + env(safe-area-inset-bottom));
+  box-shadow:0 -6px 18px rgba(0,0,0,.22);
+  display:none;
+}
+#tw-mobile-cta .tw-m-trust{ margin:0 0 6px; text-align:center; color:#fff; font-size:12px; font-weight:900; }
+#tw-mobile-cta .tw-m-slogan{ margin:0 0 8px; text-align:center; color:#fff; font-size:13px; font-weight:900; }
+#tw-mobile-cta .tw-m-row{ display:flex; gap:8px; }
+#tw-mobile-cta .tw-m-btn{
+  flex:1;
+  display:block;
+  text-align:center;
+  text-decoration:none;
+  font-weight:900;
+  font-size:12px;
+  line-height:1.2;
+  padding:11px 8px;
+  border-radius:10px;
+}
+#tw-mobile-cta .tw-m-btn--call{ background:var(--tw-brand); color:#fff; }
+#tw-mobile-cta .tw-m-btn--wa{ background:var(--tw-accent); color:#fff; }
+#tw-mobile-cta .tw-m-rating{ margin-top:7px; text-align:center; font-size:11px; color:rgba(255,255,255,.92); line-height:1.2; }
+#tw-mobile-cta .tw-m-stars{ color:var(--tw-star); letter-spacing:.5px; }
+
+@media (max-width:1024px){
+  #tw-floating-cta{ display:none !important; }
+  #tw-mobile-cta{ display:block !important; }
+}
+
+/* =========================================================
+   Inquiry / Angebotsblock – 1 Spalte + volle Breite Buttons
+   ========================================================= */
+.tw-inquiry{ margin-top:18px; }
+
+.tw-inquiry__card{
+  background:#fff;
+  border:1px solid var(--tw-border);
+  border-left:4px solid var(--tw-brand);
+  border-radius:14px;
+  padding:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+
+.tw-inquiry__badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(169,119,69,.12);
+  color:var(--tw-brand-dk);
+  font-weight:900;
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  margin:0 0 10px;
+}
+
+.tw-inquiry__title{ margin:0 0 6px; color:var(--tw-brand-dk); font-size:26px; line-height:1.15; }
+.tw-inquiry__text{ margin:0 0 14px; color:#444; font-size:14px; line-height:1.5; }
+
+.tw-inquiry__grid{ display:block !important; }
+
+.tw-inquiry__actions,
+.tw-inquiry__form{
+  width:100% !important;
+  max-width:none !important;
+  float:none !important;
+}
+
+.tw-inquiry__actions{
+  background:var(--tw-soft);
+  border:1px solid #eee;
+  border-radius:12px;
+  padding:14px;
+}
+
+.tw-inquiry__btn{
+  display:block !important;
+  width:100% !important;
+  max-width:none !important;
+  text-align:center;
+  text-decoration:none;
+  font-weight:900;
+  border-radius:10px;
+  padding:12px 12px;
+  line-height:1.2;
+  margin:0 0 10px;
+}
+.tw-inquiry__btn--call{ background:var(--tw-brand); color:#fff; }
+.tw-inquiry__btn--wa{ background:var(--tw-accent); color:#fff; }
+
+.tw-inquiry__note{ display:block; font-size:12px; color:#555; opacity:.95; }
+
+.tw-inquiry__form{
+  margin-top:12px;
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:12px;
+  padding:14px;
+}
+
+/* =========================================================
+   Praxiswissen – Nummer-Chips
+   ========================================================= */
+/* =========================================================
+   Praxiswissen – Nummer-Chips (Nummer im Kreis, nicht daneben)
+   ========================================================= */
+
+.lp-kueche .lp-praxis{
+  margin-top:18px;
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:14px;
+  padding:18px;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+
+/* H3 Layout */
+.lp-kueche .lp-praxis h3{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:18px 0 8px;
+  color:var(--tw-brand-dk);
+  font-size:18px;
+  line-height:1.3;
+}
+
+/* Nummer im Kreis */
+.lp-kueche .lp-praxis h3::before{
+  content: attr(data-step);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:38px;
+  height:38px;
+  min-width:38px;
+  border-radius:50%;
+  background:var(--tw-brand);
+  color:#fff;
+  font-weight:900;
+  font-size:15px;
+  box-shadow:0 6px 16px rgba(169,119,69,.25);
+}
+
+/* Falls im H3 noch "1." etc. steht → ausblenden */
+.lp-kueche .lp-praxis h3 span.step-number{
+  display:none !important;
+}
+
+/* Absatz bündig unter Überschrift */
+.lp-kueche .lp-praxis p{
+  margin:0 0 14px 50px;
+  color:#444;
+  font-size:14px;
+  line-height:1.6;
+}
+
+@media (max-width:849px){
+  .lp-kueche .lp-praxis p{
+    margin-left:0;
+  }
+}
+/* =========================================================
+   INFOHUB – Upgrade (einheitlich, Redundanz entfernt)
+   ========================================================= */
+.lp-infohub{
+  --ih-max: 980px;
+  --ih-radius: 14px;
+  --ih-shadow: 0 10px 24px rgba(0,0,0,.06);
+  --ih-soft-2: rgba(0,0,0,.04);
+}
+
+/* Content Breite */
+.lp-infohub .lp-content-card{ max-width:var(--ih-max); margin-left:auto; margin-right:auto; }
+
+/* Typografie */
+.lp-infohub .lp-hero__title{ letter-spacing:-0.2px; line-height:1.12; }
+.lp-infohub .lp-hero__intro{ font-size:16px; line-height:1.6; color:#3a3a3a; }
+.lp-infohub p{ font-size:16px; line-height:1.65; color:#3b3b3b; }
+.lp-infohub h2{ margin-top:26px; margin-bottom:10px; }
+.lp-infohub h3{ margin-top:18px; margin-bottom:6px; }
+
+/* Meta */
+.lp-infohub .ih-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:8px 0 10px;
+  font-size:13px;
+  color:#6a6a6a;
+}
+.lp-infohub .ih-meta span{
+  background:var(--ih-soft-2);
+  border:1px solid rgba(0,0,0,.06);
+  padding:6px 10px;
+  border-radius:999px;
+}
+
+/* Hero CTAs */
+.lp-infohub .ih-hero__ctas{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:14px;
+}
+.lp-infohub .ih-hero__ctas a{ min-width:220px; }
+@media (max-width:849px){
+  .lp-infohub .ih-hero__ctas a{ width:100%; min-width:0; }
+}
+
+/* TOC Card */
+.lp-infohub .ih-toc{
+  max-width:var(--ih-max);
+  margin:14px auto 0;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.07);
+  border-left:4px solid var(--tw-brand);
+  border-radius:var(--ih-radius);
+  padding:14px 14px 10px;
+  box-shadow:var(--ih-shadow);
+}
+.lp-infohub .ih-toc__title{
+  font-weight:900;
+  color:var(--tw-brand-dk);
+  margin:0 0 10px;
+}
+.lp-infohub .ih-toc a{
+  display:block;
+  padding:8px 10px;
+  margin:0 0 6px;
+  border-radius:10px;
+  text-decoration:none;
+  border:1px solid rgba(0,0,0,.06);
+  background:rgba(169,119,69,.06);
+  color:#2e2e2e;
+  font-weight:700;
+}
+.lp-infohub .ih-toc a:hover{ background:rgba(169,119,69,.12); }
+
+/* Section Cards */
+.lp-infohub .ih-section{
+  max-width:var(--ih-max);
+  margin:14px auto 0;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.07);
+  border-radius:var(--ih-radius);
+  padding:16px;
+  box-shadow:0 6px 18px rgba(0,0,0,.05);
+}
+
+/* Cards Grid */
+.lp-infohub .ih-cards{
+  display:grid;
+  gap:12px;
+  grid-template-columns:1fr;
+  margin-top:10px;
+}
+@media (min-width:900px){
+  .lp-infohub .ih-cards{ grid-template-columns:1fr 1fr; }
+}
+.lp-infohub .ih-card{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.07);
+  border-radius:14px;
+  padding:14px;
+  box-shadow:0 6px 16px rgba(0,0,0,.05);
+}
+
+/* RELATED */
+.lp-infohub .ih-related{ max-width:var(--ih-max); margin:14px auto 0; }
+.lp-infohub .ih-related__grid{
+  display:grid;
+  gap:12px;
+  grid-template-columns:1fr;
+}
+@media (min-width:900px){
+  .lp-infohub .ih-related__grid{ grid-template-columns:1fr 1fr 1fr; }
+}
+.lp-infohub .ih-related__item{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.07);
+  border-radius:14px;
+  padding:14px;
+  box-shadow:0 6px 16px rgba(0,0,0,.05);
+}
+
+/* FAQ */
+.lp-infohub .lp-faq .accordion-title{ font-weight:900; }
+.lp-infohub .lp-faq .accordion-inner,
+.lp-infohub .lp-faq__answer{ color:#3a3a3a; font-size:15px; line-height:1.6; }
+
+/* =========================================================
+   LIST FIX (Engine): Keine doppelten Bullets/Checks (nur CSS Icons)
+   Klassen aus Engine: .ih-benefits .ih-bullets .ih-checklist__ul .ih-toc__list
+   ========================================================= */
+.lp-kueche .ih-benefits,
+.lp-kueche .ih-bullets,
+.lp-kueche .ih-checklist__ul,
+.lp-kueche .ih-toc__list{ list-style:none !important; padding-left:0 !important; margin:10px 0 0; }
+
+.lp-kueche .ih-benefits li,
+.lp-kueche .ih-bullets li,
+.lp-kueche .ih-checklist__ul li,
+.lp-kueche .ih-toc__list li{ position:relative; padding-left:22px; margin:6px 0; line-height:1.45; }
+
+/* TOC */
+.lp-kueche .ih-toc__list li{ padding-left:18px; }
+.lp-kueche .ih-toc__list li::before{ content:"›"; position:absolute; left:0; top:0; color:var(--tw-brand); font-weight:900; }
+
+/* Benefits */
+.lp-kueche .ih-benefits li::before{ content:"✓"; position:absolute; left:0; top:0; color:var(--tw-accent); font-weight:900; }
+
+/* Bullets */
+.lp-kueche .ih-bullets li::before{ content:"•"; position:absolute; left:0; top:0; color:var(--tw-brand-dk); font-weight:900; opacity:.85; }
+
+/* Checklist */
+.lp-kueche .ih-checklist__ul li::before{ content:"✓"; position:absolute; left:0; top:0; color:var(--tw-accent); font-weight:900; }
+
+/* Reset: falls Flatsome li::before nutzt */
+.lp-kueche .lp-content-card ul li::marker{ content:"" !important; }
+.lp-kueche .lp-content-card ul li::before{ content:none; }
+.lp-kueche .lp-content-card .ih-benefits li::before,
+.lp-kueche .lp-content-card .ih-bullets li::before,
+.lp-kueche .lp-content-card .ih-checklist__ul li::before,
+.lp-kueche .lp-content-card .ih-toc__list li::before{ /* keep via specificity */ }
+
+/* =========================================================
+   INFOBOX (gelb) – Engine: .tw-infobox__ul
+   ========================================================= */
+.lp-kueche .tw-infobox{
+  background:#fff7cf;
+  border:1px solid rgba(0,0,0,0.08);
+  border-left:6px solid #caa24b;
+  border-radius:16px;
+  padding:16px 16px 14px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.04);
+  margin:16px 0;
+}
+.lp-kueche .tw-infobox__kicker{
+  display:inline-block;
+  font-weight:900;
+  font-size:12px;
+  letter-spacing:.02em;
+  text-transform:uppercase;
+  background:rgba(202,162,75,0.18);
+  padding:6px 10px;
+  border-radius:999px;
+  margin:0 0 10px;
+  color:#6b3f22;
+}
+.lp-kueche .tw-infobox__headline{
+  font-weight:900;
+  font-size:18px;
+  line-height:1.2;
+  margin:0 0 8px;
+  color:#2b2b2b;
+}
+.lp-kueche .tw-infobox__text{
+  font-size:15px;
+  line-height:1.55;
+  margin:0 0 10px;
+  color:#2b2b2b;
+}
+.lp-kueche .tw-infobox__ul{ list-style:none; padding-left:0; margin:0; }
+.lp-kueche .tw-infobox__ul li{ position:relative; padding-left:22px; margin:6px 0; }
+.lp-kueche .tw-infobox__ul li::before{ content:"✓"; position:absolute; left:0; top:0; font-weight:900; color:#6b3f22; opacity:.9; }
+
+.lp-kueche .tw-infobox__cta{ margin-top:12px; }
+.lp-kueche .tw-infobox__btn{
+  display:inline-block;
+  font-weight:900;
+  text-decoration:none;
+  padding:10px 14px;
+  border-radius:12px;
+  background:#caa24b;
+  color:#fff;
+}
+.lp-kueche .tw-infobox__disc{ margin-top:10px; font-size:12px; opacity:.85; color:#3b3b3b; }
+
+.lp-kueche .tw-infobox--quote{ border-left-color:#8b6b2a; }
+.lp-kueche .tw-infobox--warn{ background:#fff1e8; border-left-color:#d46a2c; }
+
+/* Insurance InfoBox: keine native marker / keine theme pseudo bullets */
+.lp-kueche .tw-infobox__ul{
+  list-style:none !important;
+  padding-left:0 !important;
+  margin:0 !important;
+}
+.lp-kueche .tw-infobox__ul li::marker{ content:"" !important; }
